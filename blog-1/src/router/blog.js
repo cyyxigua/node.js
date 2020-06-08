@@ -19,7 +19,6 @@ const handleBlogRouter = (req, res) => {
     // app.js中已经解析出了query
     let author = req.query.author || ''
     const keyword = req.query.keyword || ''
-    console.log()
     // const listData = getList(author, keyword)
     // return new SuccessModel(listData)
 

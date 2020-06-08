@@ -59,7 +59,7 @@ app.get('/api/get-cookie', loginCheck, (req, res, next) => {
   })
 })
 
-app.post('/api/get-post-data', (req, res, next) => {
+app.post('/api/get-post-data', loginCheck, (req, res, next) => {
   console.log('post api/get-post-data')
   res.json({
     errno: 0,
