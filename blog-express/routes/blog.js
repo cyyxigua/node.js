@@ -32,7 +32,6 @@ router.get('/detail', (req, res, next) => {
     res.json(
       new SuccessModel(data)
     )
-    return
   })
 });
 

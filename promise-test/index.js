@@ -42,12 +42,30 @@ function getFileContent(filName) {
   return promise
 }
 
-getFileContent('a.json').then(aData => {
-  console.log('a data', aData)
-  return getFileContent(aData.next)
-}).then(bData => {
-  console.log('b data', bData)
-  return getFileContent(bData.next)
-}).then(cData => {
-  console.log('c data', cData)
-})
+// getFileContent('a.json').then(aData => {
+//   console.log('a data', aData)
+//   return getFileContent(aData.next)
+// }).then(bData => {
+//   console.log('b data', bData)
+//   return getFileContent(bData.next)
+// }).then(cData => {
+//   console.log('c data', cData)
+// })
+
+// 用 async-await 获取文件内容
+async function readFileData() {
+  // 同步写法
+  try {
+    const aData = await getFileContent('a.json')
+    console.log('a data', aData)
+    const bData = await getFileContent(aData.next)
+    console.log('b data', bData)
+    const cData = await getFileContent(bData.next)
+    console.log('c data', cData)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+readFileData()
+
